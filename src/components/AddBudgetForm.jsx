@@ -20,6 +20,7 @@ const AddBudgetForm = () => {
             <label htmlFor="newBudgetAmount">Amount</label>
             <input type="number" step="0.01" name="newBudgetAmount" id="newBudgetAmount" placeholder='ex. $7' required inputMode='decimal'/>
             </div>
+            <input type="hidden" name='_action' value="createBudget"/>
             <button type='submit' className='btn btn--dark'>
                 <span>Create Budget</span>
                 <CurrencyDollarIcon width={20}/>
