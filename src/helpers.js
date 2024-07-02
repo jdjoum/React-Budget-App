@@ -1,3 +1,6 @@
+// Wait Time
+export const wait = () => new Promise(res => setTimeout(res, Math.random() * 2000));
+
 // Local Storage
 export const fetchData = (key) => {
     return JSON.parse(localStorage.getItem(key));
