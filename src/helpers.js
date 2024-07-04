@@ -11,6 +11,18 @@ export const deleteItem = ({key}) => {
     return localStorage.removeItem(key);
 }
 
+// Total Spent By Budget
+export const calculateSpentByBudget = (budgetId) => {
+    const expenses = fetchData("expenses") ?? [];
+    const budgetSpent = expenses.reduce((acc ,expense) => {
+        // Check if expense.id === budgetId I passed in
+        if(expense.budgetId !== budgetId) return acc
+        // Add the current amount to my total
+        return acc += expense.amount
+    }, 0)
+    return budgetSpent;
+}
+
 // Generate Random Color
 const generateRandomColor = () => {
     const exisitingBudgetLength = fetchData('budgets')?.length ?? 0;
@@ -45,4 +57,22 @@ export const createExpense = ({
     }
     const exisitingExpenses = fetchData("expenses") ?? [];
     return localStorage.setItem("expenses", JSON.stringify([...exisitingExpenses, newItem]))
+}
+
+// Formatting
+
+// Format Currency
+export const formatCurrency = (amt) => {
+    return amt.toLocaleString(undefined, {
+        style: "currency",
+        currency: "USD"
+    })
+}
+
+// Format Percentage
+export const formatPercentage = (amt) => {
+    return amt.toLocaleString(undefined, {
+        style: "percent",
+        minimumFractionDigits: 0,
+    })
 }
