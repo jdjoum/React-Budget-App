@@ -1,5 +1,5 @@
 // Wait Time
-export const wait = () => new Promise(res => setTimeout(res, Math.random() * 2000));
+export const wait = () => new Promise(res => setTimeout(res, Math.random() * 800));
 
 // Local Storage
 export const fetchData = (key) => {
@@ -60,6 +60,9 @@ export const createExpense = ({
 }
 
 // Formatting
+
+// Format Date
+export const formatDateToLocaleString = (epoch) => new Date(epoch).toLocaleDateString();
 
 // Format Currency
 export const formatCurrency = (amt) => {
