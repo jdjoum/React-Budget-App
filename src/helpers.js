@@ -56,8 +56,8 @@ export const createBudget = ({
         amount: +amount,
         color: generateRandomColor()
     }
-    const exisitingBudgets = fetchData("budgets") ?? [];
-    return localStorage.setItem("budgets", JSON.stringify([...exisitingBudgets, newItem]))
+    const existingBudgets = fetchData("budgets") ?? [];
+    return localStorage.setItem("budgets", JSON.stringify([...existingBudgets, newItem]))
 }
 
 // Create Expense
@@ -71,8 +71,8 @@ export const createExpense = ({
         amount: +amount,
         budgetId: budgetId
     }
-    const exisitingExpenses = fetchData("expenses") ?? [];
-    return localStorage.setItem("expenses", JSON.stringify([...exisitingExpenses, newItem]))
+    const existingExpenses = fetchData("expenses") ?? [];
+    return localStorage.setItem("expenses", JSON.stringify([...existingExpenses, newItem]))
 }
 
 // Formatting
