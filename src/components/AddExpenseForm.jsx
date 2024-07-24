@@ -55,15 +55,15 @@ const AddExpenseForm = ({budgets}) => {
             </div>
             <input type="hidden" name="_action" value="createExpense"/>
             <button type='submit' className='btn btn--dark' disabled={isSubmitting}>
-                    {
-                        isSubmitting ? <span>Submitting...</span> : (
-                            <>
-                                <span>Add Expense</span>
-                                <PlusCircleIcon width={20} />
-                            </>
-                        )
-                    }
-                </button>
+                {
+                    isSubmitting ? <span>Submitting...</span> : (
+                        <>
+                            <span>Add Expense</span>
+                            <PlusCircleIcon width={20} />
+                        </>
+                    )
+                }
+            </button>
         </fetcher.Form>
     </div>
     )
